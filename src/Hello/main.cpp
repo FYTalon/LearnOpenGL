@@ -126,7 +126,7 @@ int main(){
     glDeleteShader(fragmentShader1);
     glDeleteShader(fragmentShader2);
 
-    unsigned int VBO, VAO, EBOaaa;
+    unsigned int VBO, VAO, EBO;
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
