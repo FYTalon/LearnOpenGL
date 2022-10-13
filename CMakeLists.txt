@@ -1,12 +1,13 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.91.0)
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-
 PROJECT(LearningOpenGL)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 include(cmake/3rdparty.cmake)
 include(cmake/config.cmake)
+
+set(EIGEN3_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/external/eigen)
+find_package(Eigen3 REQUIRED)
 
 SET( EXCUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
