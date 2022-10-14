@@ -66,9 +66,7 @@ int main(){
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-
     Shader MyShader("../src/Texture/File/vshader.s", "../src/Texture/File/fshader.s");
-
     unsigned int VBO, VAO, EBO;
 
     glGenVertexArrays(1, &VAO);

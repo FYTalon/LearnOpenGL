@@ -12,7 +12,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath){
     // set exceptions
     vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
     fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-
+    
     try {
         // open file
         vShaderFile.open(vertexPath);
