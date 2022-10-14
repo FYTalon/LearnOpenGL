@@ -14,6 +14,8 @@ M translate(const M &a, const V b){
     return c;
 }
 
+
+
 int main(){
     Eigen::Matrix4f trans = Eigen::Matrix4f::Identity();
     Eigen::Vector4f vec(1.0f, 0.0f, 0.0f, 1.0f);
