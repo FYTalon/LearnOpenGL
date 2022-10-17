@@ -8,7 +8,7 @@ out vec3 ourColor;
 out vec2 TexCoord;
 
 void main(){
-    gl_Position = transfor * vec4(apos.x + xoffset, apos.y + yoffset, apos.z, 1.0);
+    gl_Position = transform * vec4(apos.x + xoffset, apos.y + yoffset, apos.z, 1.0);
     ourColor = aColor;
     TexCoord = aTexCoord;
 }

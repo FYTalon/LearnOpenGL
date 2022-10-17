@@ -131,15 +131,10 @@ int main(){
         stbi_image_free(data);
     }
 
-    glm::mat4 trans = glm::mat4(1.0f);
-    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
-    trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
 
     MyShader.use();
     MyShader.setInt("texture1", 0);
     MyShader.setInt("texture2", 1);
-    MyShader.setMat4("transform", trans);
-    //std::cout << "flag" << std::endl;
 
     while(!glfwWindowShouldClose(window)){
         processInput(window);
@@ -147,10 +142,15 @@ int main(){
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+
+        glm::mat4 trans = glm::mat4(1.0f);
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0, 0.0, 1.0));
+        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
         MyShader.use();
         MyShader.setFloat("xoffset", xoffset);
         MyShader.setFloat("yoffset", yoffset);
         MyShader.setFloat("alpha", alpha);
+        MyShader.setMat4("transform", trans);
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture[0]);
@@ -158,6 +158,13 @@ int main(){
         glBindTexture(GL_TEXTURE_2D, texture[1]);
 
         glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        float t = glfwGetTime();
+        trans = glm::translate(glm::mat4(1.0f), glm::vec3(-0.5f, 0.5f, 0.0f));
+        trans = glm::scale(trans, glm::vec3(sin(t), sin(t), sin(t)));
+        
+        MyShader.setMat4("transform", trans);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(window);

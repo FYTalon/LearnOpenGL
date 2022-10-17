@@ -4,7 +4,6 @@ fShader::fShader(const char* vertexPath, const char* fragmentPath){
     // code
     std::string vertexCode;
     std::string fragmentCode;
-    return ;
     // file
     std::ifstream vShaderFile;
     std::ifstream fShaderFile;

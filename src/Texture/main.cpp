@@ -117,6 +117,7 @@ int main(){
         }
 
         else {
+            std::cout << stbi_failure_reason() << std::endl;
             std::cout << "Failed to load texture" << std::endl;
         }
 
