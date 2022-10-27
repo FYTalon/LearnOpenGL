@@ -142,7 +142,7 @@ int main(){
         return -1;
     }
 
-    fShader MyShader("../src/Coordinate/File/vshader.s", "../src/Coordinate/File/fshader.s");
+    fShader MyShader("../src/Camera/File/vshader.s", "../src/Camera/File/fshader.s");
     
     unsigned int VAO, VBO;
     glGenVertexArrays(1, &VAO);
@@ -160,8 +160,8 @@ int main(){
 
     int width, height, nrChannels;
     char* name[] = {
-        "../src/Coordinate/File/container.jpg",
-        "../src/Coordinate/File/awesomeface.png"
+        "../src/Camera/File/container.jpg",
+        "../src/Camera/File/awesomeface.png"
     };
     unsigned char* data;
 
