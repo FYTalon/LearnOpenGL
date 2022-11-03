@@ -16,3 +16,4 @@ set(CUDA_PROPAGATE_HOWT_FLAGS OFF)
 
 include(cmake/glad.cmake)
 include(cmake/glfw.cmake)
+include(cmake/assimp.cmake)
